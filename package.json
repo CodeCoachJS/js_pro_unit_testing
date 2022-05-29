@@ -1,0 +1,20 @@
+{
+    "name": "js_pro",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "test:coverage": "jest --coverage"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.9.0",
+        "jest": "^27.5.1"
+    },
+    "dependencies": {
+        "axios": "^0.27.2"
+    }
+}
