@@ -25,4 +25,4 @@ https://www.loom.com/share/d14d9c4f42df4e45bba0e3eb7b878816
 
 ---
 
-There is another function here that needs to be tested. Run coverage after you add your test and ensure that it meets 100% coverage!
+Run `npm run test:coverage` - you will see that 100% test coverage is not met! Add tests to get this app to 100% coverage.
