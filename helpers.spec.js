@@ -3,7 +3,7 @@ const {
   dataFetcher,
   createList,
   formatCurrency,
-  promiseQueue
+  handlePromises
 } = require('./helpers.js');
 const axios = require('axios');
 
@@ -99,7 +99,7 @@ describe('formatCurrency', () => {
   });
 });
 
-describe('promiseQueue', () => {
+describe('handlePromises', () => {
   it('does <insert your test here>', () => {
     return true;
   });

@@ -62,12 +62,12 @@ const formatCurrency = (num) => {
 };
 
 /**
- * Promise queue takes in an array of promises and can run a specified amount in parallel
+ * Resolves (or rejects) an array of promises
  * @param {array} tasks an array of promises ex: [new Promise((res, rej) => res())]
  * @returns {array} of resolved promises or an error
  */
 
-const promiseQueue = async (tasks = []) => {
+const handlePromises = async (tasks = []) => {
   try {
     const [...data] = await Promise.all(tasks);
     return data;
@@ -81,5 +81,5 @@ module.exports = {
   dataFetcher,
   createList,
   formatCurrency,
-  promiseQueue
+  handlePromises
 };
