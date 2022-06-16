@@ -56,7 +56,7 @@ const createList = (arr, sortFn) => {
  * @returns {string} ex: $3.99
  */
 const formatCurrency = (num) => {
-  if (Number.isNaN(num)) return '$0.00';
+  if (isNaN(num)) return '$0.00';
 
   return `$${num.toFixed(2)}`;
 };
