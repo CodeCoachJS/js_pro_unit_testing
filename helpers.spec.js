@@ -94,13 +94,36 @@ describe('createList', () => {
  */
 
 describe('formatCurrency', () => {
-  it('does <insert your test here>', () => {
-    return true;
+  it('formats currency', () => {
+    expect(formatCurrency(2)).toEqual('$2.00');
+    expect(formatCurrency('dog')).toEqual('$0.00');
   });
 });
 
 describe('handlePromises', () => {
-  it('does <insert your test here>', () => {
-    return true;
+  it('resolves all promises', async () => {
+    const promise1 = new Promise((res, rej) => {
+      return res('HELLO');
+    });
+
+    const promise2 = new Promise((res, rej) => {
+      return res('WORLD');
+    });
+
+    const data = await handlePromises([promise1, promise2]);
+    expect(data).toEqual(['HELLO', 'WORLD']);
+  });
+
+  it('handles rejected promises', async () => {
+    const promise1 = new Promise((res, rej) => {
+      return rej('ERROR');
+    });
+
+    const promise2 = new Promise((res, rej) => {
+      return res('WORLD');
+    });
+
+    const data = await handlePromises([promise1, promise2]);
+    expect(data).toEqual(new Error('ERROR'));
   });
 });
