@@ -1,15 +1,13 @@
 const {
   flattenArr,
   dataFetcher,
-  createList,
+  sortList,
   formatCurrency,
   handlePromises
 } = require('./helpers.js');
 const axios = require('axios');
 
-jest.mock('axios', () => ({
-  get: jest.fn()
-}));
+jest.mock('axios');
 
 describe('flattenArr', () => {
   it('return a non-nested arr', () => {
@@ -47,44 +45,24 @@ describe('dataFetcher', () => {
   });
 });
 
-describe('createList', () => {
+describe('sortList', () => {
   it('calls a sorter function if it is available', () => {
     const sortFn = jest.fn();
 
-    createList([3, 2, 1], sortFn);
+    sortList([3, 2, 1], sortFn);
 
     expect(sortFn).toBeCalled();
+    expect(sortFn).toBeCalledTimes(1);
     expect(sortFn.mock.calls).toEqual([[[3, 2, 1]]]);
   });
 
   it('does not call a sorter function if the array has a length <= 1', () => {
     const sortFn = jest.fn();
 
-    createList([1], sortFn);
+    sortList([1], sortFn);
 
     expect(sortFn).not.toBeCalled();
-  });
-
-  it('calls the sorter fn', () => {
-    const tests = [
-      //arr       sortFn     expected
-      [[2, 3, 1], jest.fn(), true],
-      [[], jest.fn(), false],
-      [[1], jest.fn(), false]
-    ];
-
-    tests.forEach((test) => {
-      const [arr, sortFn, expected] = test;
-
-      createList(arr, sortFn);
-      if (expected) {
-        expect(sortFn).toBeCalled();
-      }
-
-      if (!expected) {
-        expect(sortFn).not.toBeCalled();
-      }
-    });
+    expect(sortFn).toBeCalledTimes(0);
   });
 });
 

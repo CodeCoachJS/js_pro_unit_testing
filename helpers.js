@@ -42,7 +42,8 @@ const dataFetcher = async () => {
  * @param {function} sortFn a callback function to sort the array
  * @returns {array}
  */
-const createList = (arr, sortFn) => {
+
+const sortList = (arr, sortFn) => {
   if (sortFn && arr.length > 1) {
     return sortFn(arr);
   }
@@ -79,7 +80,7 @@ const handlePromises = async (tasks = []) => {
 module.exports = {
   flattenArr,
   dataFetcher,
-  createList,
+  sortList,
   formatCurrency,
   handlePromises
 };
