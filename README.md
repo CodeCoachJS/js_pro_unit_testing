@@ -13,13 +13,13 @@ npm run test:coverage (collects coverage metrics)
 ---
 
 Intro to Jest:
-https://www.loom.com/share/72090a5ce7cb45d4ad1ec5dae0c63d0d
+https://www.loom.com/share/f1cc5c32e96441468c65dae30b9216c6
 
 Testing Async Methods:
-https://www.loom.com/share/634683277e4f4b88a8a5d1b415f872c2
+https://www.loom.com/share/c0f7523e066345fd9fd18a81a83f8a68
 
 Testing Callbacks and Using Mocks:
-https://www.loom.com/share/d14d9c4f42df4e45bba0e3eb7b878816
+https://www.loom.com/share/5361b39e8da14cc9a98feeb4f1419aa8
 
 ### TODO
 
