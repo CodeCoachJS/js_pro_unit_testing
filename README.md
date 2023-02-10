@@ -37,7 +37,7 @@ You will find the coverage files here:
 
 <img src="imgs/file_nav.png"/>
 
-If you open the `index.html` file in the browser you will see the uncovered lines that need tests.
+If you open `coverage/lcov-report/index.html` in the browser you will see the uncovered lines that need tests.
 
 <img src="imgs/uncovered_lines.png"/>
 
